@@ -6,7 +6,7 @@ En inicio, necesitaremos lo siguiente:
 - Un hipervisor alojado: En mi caso, me decanté por Virtualbox ya que lo he usado anteriormente.
 - Una imagen de Kali Linux: Es el OS que vamos a usar en gran parte del libro por lo que descargué una imagen de su página web.
 
-Ahora, ¿qué es un hipervisor? en términos simples es una capa de software que permite separar lo que es el hardware del software, permitiendo crear máquinas virtuales. En nuestro caso se le llama "hipervisor alojado" ya que necesita de otro OS y un programa para poder operar. Los hay "bare metal" pero eso es otro tema en el cual no vamos ahondar porque va más allá del objetivo del capítulo.
+Ahora, ¿qué es un hipervisor? En términos simples es una capa de software que permite separar lo que es el hardware del software, permitiendo crear máquinas virtuales. En nuestro caso se le llama "hipervisor alojado" ya que necesita de otro OS y un programa para poder operar. Los hay "bare metal" pero eso es otro tema en el cual no vamos ahondar porque va más allá del objetivo del capítulo.
 
 Para instalar VirtualBox me fui a la página de Oracle, [https://www.virtualbox.org/](https://www.virtualbox.org/), y descargué la última versión de host de Windows ya que es el OS que tengo en la laptop.
 
@@ -40,19 +40,29 @@ En este apartado, lo que se busca es actualizar la versión de Python que trae p
 
 Iremos con un poco más de detalle sobre cada comando:
 
-- `sudo apt update`: Este comando se encarga de actualizar la lista de paquetes disponibles en los repositorios configurados en el sistema. Es importante ejecutarlo antes de intentar instalar o actualizar cualquier paquete, ya que garantiza que el sistema tenga la información más reciente sobre las versiones disponibles.
+- `sudo apt update`:
+
+Este comando se encarga de actualizar la lista de paquetes disponibles en los repositorios configurados en el sistema. Es importante ejecutarlo antes de intentar instalar o actualizar cualquier paquete, ya que garantiza que el sistema tenga la información más reciente sobre las versiones disponibles.
 
 El símil que encontré para entender este comando es el de un supermercado. Imagina que quieres comprar algo en un supermercado, pero antes de ir, quieres saber qué productos tienen disponibles y a qué precio. Para eso, revisas el catálogo del supermercado, que es como la lista de paquetes en los repositorios. El comando `sudo apt update` es como revisar ese catálogo para asegurarte de que tienes la información más actualizada sobre los productos disponibles antes de hacer tu compra.
 
-- `apt list --upgradable`: Este comando muestra una lista de los paquetes que tienen actualizaciones disponibles. Es útil para verificar qué paquetes pueden ser actualizados antes de proceder con la actualización.
+- `apt list --upgradable`: 
+
+Este comando muestra una lista de los paquetes que tienen actualizaciones disponibles. Es útil para verificar qué paquetes pueden ser actualizados antes de proceder con la actualización.
 
 Ahora, para comprender este comando, volvamos al símil del supermercado. Después de revisar el catálogo (con `sudo apt update`), quieres saber qué productos que ya tienes en tu carrito de compras tienen una versión más nueva disponible. El comando `apt list --upgradable` es como revisar tu carrito para ver qué productos pueden ser reemplazados por versiones más recientes antes de finalizar tu compra.
 
-- `sudo apt upgrade`: Este comando actualiza todos los paquetes instalados en el sistema a sus versiones más recientes disponibles en los repositorios. Sin embargo, no instala ni elimina ningún paquete, por lo que si una actualización requiere la instalación de un nuevo paquete o la eliminación de uno existente, este comando no lo hará. Siguiendo con la referencia del supermercado, `sudo apt upgrade` es como ir al supermercado con tu carrito de compras y actualizar los productos que ya tienes, pero sin agregar nuevos productos ni eliminar los que ya están en tu carrito. Si un producto que quieres actualizar requiere un nuevo producto para funcionar, este comando no lo instalará automáticamente.
+- `sudo apt upgrade`:
 
-- `sudo apt dist-upgrade`: Este comando es similar a `sudo apt upgrade`, pero también maneja las dependencias de los paquetes. Si una actualización requiere la instalación de un nuevo paquete o la eliminación de uno existente, `dist-upgrade` lo hará automáticamente. Es útil para asegurarse de que todas las actualizaciones se apliquen correctamente, incluso si requieren cambios en las dependencias. Una vez más, recurrimos a nuestro ejemplo del supermercado: `sudo apt dist-upgrade` es como ir al supermercado con tu carrito de compras y actualizar los productos que ya tienes, pero también estar dispuesto a agregar nuevos productos o eliminar algunos de tu carrito si es necesario para completar la actualización. Si un producto que quieres actualizar requiere un nuevo producto para funcionar, este comando lo instalará automáticamente, y si un producto ya no es necesario, lo eliminará de tu carrito.
+Este comando actualiza todos los paquetes instalados en el sistema a sus versiones más recientes disponibles en los repositorios. Sin embargo, no instala ni elimina ningún paquete, por lo que si una actualización requiere la instalación de un nuevo paquete o la eliminación de uno existente, este comando no lo hará. Siguiendo con la referencia del supermercado, `sudo apt upgrade` es como ir al supermercado con tu carrito de compras y actualizar los productos que ya tienes, pero sin agregar nuevos productos ni eliminar los que ya están en tu carrito. Si un producto que quieres actualizar requiere un nuevo producto para funcionar, este comando no lo instalará automáticamente.
 
-- `sudo apt autoremove`: Este comando se utiliza para eliminar paquetes que fueron instalados como dependencias de otros paquetes y que ya no son necesarios. Después de actualizar o eliminar paquetes, es posible que queden dependencias huérfanas que ocupan espacio en el sistema. `autoremove` ayuda a limpiar esos paquetes innecesarios.
+- `sudo apt dist-upgrade`:
+
+Este comando es similar a `sudo apt upgrade`, pero también maneja las dependencias de los paquetes. Si una actualización requiere la instalación de un nuevo paquete o la eliminación de uno existente, `dist-upgrade` lo hará automáticamente. Es útil para asegurarse de que todas las actualizaciones se apliquen correctamente, incluso si requieren cambios en las dependencias. Una vez más, recurrimos a nuestro ejemplo del supermercado: `sudo apt dist-upgrade` es como ir al supermercado con tu carrito de compras y actualizar los productos que ya tienes, pero también estar dispuesto a agregar nuevos productos o eliminar algunos de tu carrito si es necesario para completar la actualización. Si un producto que quieres actualizar requiere un nuevo producto para funcionar, este comando lo instalará automáticamente, y si un producto ya no es necesario, lo eliminará de tu carrito.
+
+- `sudo apt autoremove`: 
+
+Este comando se utiliza para eliminar paquetes que fueron instalados como dependencias de otros paquetes y que ya no son necesarios. Después de actualizar o eliminar paquetes, es posible que queden dependencias huérfanas que ocupan espacio en el sistema. `autoremove` ayuda a limpiar esos paquetes innecesarios.
 
 Otra vez, nuestro símil superestrella del super: `sudo apt autoremove` es como revisar tu carrito de compras después de hacer tus actualizaciones y eliminar cualquier producto que ya no necesitas o que fue agregado como parte de una actualización pero que ahora es innecesario. Es una forma de mantener tu carrito (y tu sistema) limpio y organizado, eliminando cualquier producto (paquete) que ya no es necesario.
 
