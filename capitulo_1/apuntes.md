@@ -58,11 +58,13 @@ Este comando actualiza todos los paquetes instalados en el sistema a sus version
 
 - `sudo apt dist-upgrade`:
 
-Este comando es similar a `sudo apt upgrade`, pero también maneja las dependencias de los paquetes. Si una actualización requiere la instalación de un nuevo paquete o la eliminación de uno existente, `dist-upgrade` lo hará automáticamente. Es útil para asegurarse de que todas las actualizaciones se apliquen correctamente, incluso si requieren cambios en las dependencias. Una vez más, recurrimos a nuestro ejemplo del supermercado: `sudo apt dist-upgrade` es como ir al supermercado con tu carrito de compras y actualizar los productos que ya tienes, pero también estar dispuesto a agregar nuevos productos o eliminar algunos de tu carrito si es necesario para completar la actualización. Si un producto que quieres actualizar requiere un nuevo producto para funcionar, este comando lo instalará automáticamente, y si un producto ya no es necesario, lo eliminará de tu carrito.
+Este comando es similar a `sudo apt upgrade`, pero también maneja las dependencias de los paquetes. Si una actualización requiere la instalación de un nuevo paquete o la eliminación de uno existente, `dist-upgrade` lo hará automáticamente; es útil para asegurarse de que todas las actualizaciones se apliquen correctamente, incluso si requieren cambios en las dependencias. 
+
+Una vez más, recurrimos a nuestro ejemplo del supermercado: `sudo apt dist-upgrade` es como ir al supermercado con tu carrito de compras y actualizar los productos que ya tienes, pero también estar dispuesto a agregar nuevos productos o eliminar algunos de tu carrito si es necesario para completar la actualización. Si un producto que quieres actualizar requiere un nuevo producto para funcionar, este comando lo instalará automáticamente, y si un producto ya no es necesario, lo eliminará de tu carrito.
 
 - `sudo apt autoremove`: 
 
-Este comando se utiliza para eliminar paquetes que fueron instalados como dependencias de otros paquetes y que ya no son necesarios. Después de actualizar o eliminar paquetes, es posible que queden dependencias huérfanas que ocupan espacio en el sistema. `autoremove` ayuda a limpiar esos paquetes innecesarios.
+Este comando se utiliza para eliminar paquetes que fueron instalados como dependencias de otros paquetes y que ya no son necesarios. Después de actualizar o eliminar paquetes, es posible que queden dependencias huérfanas que ocupan espacio en el sistema; por lo que`autoremove` ayuda a limpiar esos paquetes innecesarios.
 
 Otra vez, nuestro símil superestrella del super: `sudo apt autoremove` es como revisar tu carrito de compras después de hacer tus actualizaciones y eliminar cualquier producto que ya no necesitas o que fue agregado como parte de una actualización pero que ahora es innecesario. Es una forma de mantener tu carrito (y tu sistema) limpio y organizado, eliminando cualquier producto (paquete) que ya no es necesario.
 
