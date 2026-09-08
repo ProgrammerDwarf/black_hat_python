@@ -20,7 +20,7 @@ Una vez, teniendo todo puesto a punto, o al menos "casi", seguí las indicacione
 
 ## Instalación de Kali
 
-En este apartado, lo cierto es que tomé las mismas indicaciones del libro salvo por el link recomendado para ver las máquinas disponibles desde la página de Windows, a mí. Por lo que para completar este paso lo que hice fue visitar el link de VirtualBox que dejé más arriba e hice la instalación tal cual indica el wizard.
+En este apartado lo cierto es que tomé las mismas indicaciones del libro salvo por el link para ver las máquinas disponibles desde la página de Windows. Por lo que para completar este paso lo que hice fue visitar el link de VirtualBox que dejé más arriba e hice la instalación tal cual indica el wizard.
 
 Luego de instalado el hipervisor, lo que hice fue descargar el archivo formato vbox referente a Kali Linux para luego montarlo en el VirtualBox. Para ello, se abre el programa y le das al símbolo "+" que está en verde. Se abrirá un modal que te invitará a buscar el archivo .vbox dentro de tus carpetas; yo la había descargado en 'descargas' por lo que la monté desde allí.
 
